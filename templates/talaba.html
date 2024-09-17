@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostlarim</title>
+</head>
+<body>
+    <form method="post">
+        <label for="student">Do`stimning ismi</label>
+        <input type="text" id="student" class="student" name="student" required>
+
+        <label for="are">uning yoshi:</label>
+        <input type="number" id="are" class="are" name="are" required>
+
+        <label for="course">qaysi kursda o`qiydi:</label>
+        <input type="number" id="course" class="course" name="course" required>
+
+        <input type="submit" value="Yuborish">
+    </form>
+
+
+    {% if students %}
+    <h2>Saqlangan ma'lumotlar:</h2>
+    <ul>
+        {% for student in students %}
+            <li>talabaning ismi {{ student.name }} - uning yoshi: {{ student.are }} - kursi: {{student.course}}</li>
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+        <p>Hech qanday ma'lumot mavjud emas.</p>
+    {% endif %}  
+</body>
+</html>

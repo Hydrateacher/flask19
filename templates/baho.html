@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baholar</title>
+</head>
+<body>
+    <form method="post">
+        <label for="name">Talaba ismi</label>
+        <input type="text" id="name" class="name" name="name" required>
+
+        <label for="ball">bahosi:</label>
+        <input type="number" id="ball" class="ball" name="ball" required>
+
+        <input type="submit" value="Yuborish">
+    </form>
+
+
+    {% if balls %}
+    <h2>Saqlangan ma'lumotlar:</h2>
+    <ul>
+        {% for ball in balls %}
+            <li>Talabaning ismi {{ ball.name }} - bahosi:: {{ ball.ball }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+        <p>Hech qanday ma'lumot mavjud emas.</p>
+    {% endif %}  
+</body>
+</html>

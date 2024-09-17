@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostlarim</title>
+</head>
+<body>
+    <form method="post">
+        <label for="friend">Do`stimning ismi</label>
+        <input type="text" id="friend" class="friend" name="friend" required>
+
+        <label for="are">uning yoshi:</label>
+        <input type="number" id="are" class="are" name="are" required>
+
+        <input type="submit" value="Yuborish">
+    </form>
+
+
+    {% if friends %}
+    <h2>Saqlangan ma'lumotlar:</h2>
+    <ul>
+        {% for friend in friends %}
+            <li>Do`stimning ismi {{ friend.name }} - uning yoshi:: {{ friend.are }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+        <p>Hech qanday ma'lumot mavjud emas.</p>
+    {% endif %}  
+</body>
+</html>
